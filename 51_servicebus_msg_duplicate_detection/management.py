@@ -1,6 +1,12 @@
 import os
 from azure.mgmt.servicebus import ServiceBusManagementClient
 from azure.identity import DefaultAzureCredential
+from dotenv import load_dotenv, dotenv_values
+
+# load environment variables
+if os.path.exists(".env"):
+    load_dotenv(override=True)
+    config = dotenv_values(".env")
 
 QUEUE_NAME=os.getenv('QUEUE_NAME')
 NAMESPACE_NAME=os.getenv('NAMESPACE_NAME')

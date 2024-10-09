@@ -1,14 +1,15 @@
-import logging
-import sys
+# import logging
+# import sys
+
+# handler = logging.StreamHandler(stream=sys.stdout)
+# logger = logging.getLogger("azure.servicebus")
+# logger.setLevel(logging.DEBUG)
+# logger.addHandler(handler)
+
 import os
 import datetime
 from azure.servicebus import ServiceBusClient, ServiceBusMessage
 from dotenv import load_dotenv, dotenv_values
-
-handler = logging.StreamHandler(stream=sys.stdout)
-logger = logging.getLogger("azure.servicebus")
-logger.setLevel(logging.DEBUG)
-logger.addHandler(handler)
 
 # load environment variables
 if os.path.exists(".env"):

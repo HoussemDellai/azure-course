@@ -7,7 +7,7 @@ NAMESPACE_NAME=os.getenv('NAMESPACE_NAME')
 RESOURCE_GROUP_NAME=os.getenv('RESOURCE_GROUP_NAME')
 SUBSCRIPTION_ID=os.getenv('SUBSCRIPTION_ID')
 
-# Create a Service Bus client
+# Create a Service Bus Management client
 servicebus_client = ServiceBusManagementClient(
     credential=DefaultAzureCredential(), 
     subscription_id=SUBSCRIPTION_ID

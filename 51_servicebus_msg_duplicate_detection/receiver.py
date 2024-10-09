@@ -1,6 +1,11 @@
 import os
 from azure.servicebus import ServiceBusClient, ServiceBusMessage
+from dotenv import load_dotenv, dotenv_values
 
+# load environment variables
+if os.path.exists(".env"):
+    load_dotenv(override=True)
+    config = dotenv_values(".env")
 SERVICE_BUS_CONNECTION_STRING=os.getenv('SERVICE_BUS_CONNECTION_STRING')
 QUEUE_NAME=os.getenv('QUEUE_NAME')
 

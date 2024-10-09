@@ -11,4 +11,4 @@ az servicebus queue create -g rg-servicebus --namespace-name sb-namespace-sncf -
 az servicebus namespace authorization-rule keys list -g rg-servicebus --namespace-name sb-namespace-sncf -n RootManageSharedAccessKey --query primaryConnectionString --output tsv
 
 # install the required packages
-pip install azure-identity azure-servicebus azure-mgmt-servicebus azure.mgmt.servicebus datetime logging
+pip install azure-identity azure-servicebus azure-mgmt-servicebus azure.mgmt.servicebus datetime logging python-dotenv

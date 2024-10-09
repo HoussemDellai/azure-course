@@ -3,11 +3,17 @@ import sys
 import os
 import datetime
 from azure.servicebus import ServiceBusClient, ServiceBusMessage
+from dotenv import load_dotenv, dotenv_values
 
 handler = logging.StreamHandler(stream=sys.stdout)
 logger = logging.getLogger("azure.servicebus")
 logger.setLevel(logging.DEBUG)
 logger.addHandler(handler)
+
+# load environment variables
+if os.path.exists(".env"):
+    load_dotenv(override=True)
+    config = dotenv_values(".env")
 
 SERVICE_BUS_CONNECTION_STRING = os.getenv("SERVICE_BUS_CONNECTION_STRING")
 QUEUE_NAME = os.getenv("QUEUE_NAME")
